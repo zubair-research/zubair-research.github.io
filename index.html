@@ -3,453 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Muhammad Zubair develops wearable bioelectronic systems and intelligent algorithms for neural interfaces, physiological sensing, and human-machine interaction.">
-  <meta name="theme-color" content="#f3f1ea">
-  <title>Muhammad Zubair | Biomedical Engineer & Researcher</title>
+  <meta name="description" content="Muhammad Zubair — biomedical engineering researcher working on wearable bioelectronics, neural interfaces, physiological signal processing, and artificial intelligence.">
+  <title>Muhammad Zubair — Research</title>
   <style>
-    :root {
-      --paper: #f3f1ea;
-      --paper-deep: #e7e3d8;
-      --ink: #172320;
-      --muted: #65706b;
-      --line: rgba(23, 35, 32, 0.17);
-      --teal: #136b64;
-      --teal-dark: #0d4e49;
-      --rust: #c86647;
-      --white: #fffdf8;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      text-rendering: optimizeLegibility;
-    }
-    a { color: inherit; text-decoration: none; }
-    ::selection { background: rgba(19, 107, 100, 0.22); }
-
-    .skip {
-      position: fixed;
-      top: -60px;
-      left: 20px;
-      z-index: 100;
-      padding: 12px 18px;
-      border-radius: 0 0 8px 8px;
-      background: var(--ink);
-      color: white;
-    }
-    .skip:focus { top: 0; }
-
-    header {
-      width: min(100% - 64px, 1340px);
-      height: 94px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
-    }
-    .mark {
-      width: 43px;
-      height: 43px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--ink);
-      border-radius: 50%;
-      font-family: Georgia, serif;
-      font-style: italic;
-      letter-spacing: -0.08em;
-    }
-    .mark span { color: var(--teal); }
-    nav { display: flex; gap: 36px; color: #39433f; font-size: 13px; font-weight: 600; }
-    .scholar { justify-self: end; color: var(--teal-dark); font-size: 13px; font-weight: 700; }
-    nav a, .under { position: relative; }
-    nav a::after, .under::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: -7px;
-      left: 0;
-      height: 1px;
-      background: currentColor;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.22s;
-    }
-    nav a:hover::after, .under:hover::after { transform: scaleX(1); transform-origin: left; }
-
-    .hero {
-      width: min(100% - 64px, 1340px);
-      min-height: 720px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.65fr);
-      gap: clamp(52px, 7vw, 112px);
-      align-items: center;
-      padding: 82px 5vw 90px;
-    }
-    .eyebrow, .kicker {
-      margin: 0 0 24px;
-      color: var(--teal);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.19em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      max-width: 860px;
-      margin: 0;
-      font-family: Georgia, serif;
-      font-size: clamp(57px, 6.2vw, 96px);
-      font-weight: 400;
-      letter-spacing: -0.055em;
-      line-height: 0.97;
-    }
-    .hero h1 em { color: var(--teal); font-weight: 400; }
-    .summary {
-      max-width: 620px;
-      margin: 36px 0 0;
-      color: #4c5853;
-      font-size: clamp(17px, 1.35vw, 20px);
-      line-height: 1.65;
-    }
-    .hero-links { display: flex; align-items: center; gap: 34px; margin-top: 40px; }
-    .primary { display: inline-flex; align-items: center; gap: 15px; color: var(--teal-dark); font-size: 13px; font-weight: 750; }
-    .circle {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(13, 78, 73, 0.46);
-      border-radius: 50%;
-      transition: 0.18s;
-    }
-    .primary:hover .circle { background: var(--teal); color: white; }
-    .text-link { color: #44514c; font-size: 13px; font-weight: 650; }
-
-    .portrait { position: relative; }
-    .photo {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 0.79;
-      overflow: hidden;
-      border-radius: 46% 46% 6px 6px;
-      background: #c9d0cb;
-      box-shadow: 0 30px 65px rgba(28, 51, 47, 0.14);
-    }
-    .photo::after {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      border-radius: 46% 46% 3px 3px;
-    }
-    .photo img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: 50% 35%;
-      filter: saturate(0.72) contrast(1.03);
-    }
-    .signal {
-      position: absolute;
-      right: -35px;
-      bottom: 58px;
-      width: 210px;
-      padding: 16px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.68);
-      border-radius: 6px;
-      background: rgba(247, 245, 238, 0.9);
-      box-shadow: 0 18px 45px rgba(23, 35, 32, 0.16);
-      backdrop-filter: blur(12px);
-    }
-    .signal b { color: var(--teal); font-size: 10px; letter-spacing: 0.16em; }
-    .wave { margin: 12px 0; color: var(--rust); font-size: 20px; letter-spacing: 4px; }
-    .signal small, .caption {
-      color: var(--muted);
-      font: 9px/1.6 ui-monospace, monospace;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .caption { margin-top: 16px; }
-
-    .statement {
-      padding: clamp(82px, 9vw, 138px) max(32px, calc((100vw - 1180px) / 2));
-      background: var(--ink);
-      color: var(--white);
-    }
-    .statement p {
-      max-width: 1130px;
-      margin: 0;
-      font-family: Georgia, serif;
-      font-size: clamp(31px, 4vw, 58px);
-      letter-spacing: -0.035em;
-      line-height: 1.2;
-    }
-    .statement strong { color: #8cc7bf; font-weight: 400; font-style: italic; }
-
-    .section {
-      width: min(100% - 64px, 1180px);
-      margin: auto;
-      padding: clamp(90px, 10vw, 150px) 0;
-    }
-    .section h2, .contact h2 {
-      max-width: 760px;
-      margin: 0;
-      font-family: Georgia, serif;
-      font-size: clamp(38px, 4.4vw, 62px);
-      font-weight: 400;
-      letter-spacing: -0.045em;
-      line-height: 1.08;
-    }
-    .research { margin-top: 74px; border-top: 1px solid var(--line); }
-    .research article {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 25px;
-      padding: 36px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .num { color: var(--rust); font: 11px ui-monospace, monospace; }
-    .research article > div {
-      display: grid;
-      grid-template-columns: minmax(240px, 0.75fr) minmax(300px, 1.25fr);
-      gap: 60px;
-    }
-    .research h3 { margin: 0; font-size: clamp(20px, 2vw, 26px); font-weight: 600; letter-spacing: -0.025em; }
-    .research p { max-width: 600px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
-
-    .pubs {
-      width: 100%;
-      max-width: none;
-      padding-left: max(32px, calc((100vw - 1180px) / 2));
-      padding-right: max(32px, calc((100vw - 1180px) / 2));
-      background: var(--paper-deep);
-    }
-    .pub-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; }
-    .pub-list { margin-top: 78px; border-top: 1px solid var(--line); }
-    .publication {
-      display: grid;
-      grid-template-columns: 190px 1fr 40px;
-      gap: 36px;
-      align-items: start;
-      padding: 34px 0 36px;
-      border-bottom: 1px solid var(--line);
-    }
-    .meta {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      color: var(--muted);
-      font: 10px ui-monospace, monospace;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .meta span:first-child { color: var(--rust); font-size: 12px; }
-    .publication h3 {
-      max-width: 760px;
-      margin: 0 0 16px;
-      font-family: Georgia, serif;
-      font-size: clamp(22px, 2.25vw, 31px);
-      font-weight: 400;
-      letter-spacing: -0.025em;
-      line-height: 1.22;
-    }
-    .publication p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
-    .publication .venue { color: var(--teal-dark); font-weight: 700; }
-    .pub-arrow {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      transition: 0.18s;
-    }
-    .publication:hover .pub-arrow { background: var(--teal); border-color: var(--teal); color: white; }
-
-    .about {
-      display: grid;
-      grid-template-columns: minmax(330px, 0.9fr) minmax(360px, 1.1fr);
-      gap: clamp(70px, 10vw, 150px);
-    }
-    .about-copy > p { margin: 0 0 24px; color: #4b5652; font-size: 16px; line-height: 1.85; }
-    .timeline { margin-top: 50px; border-top: 1px solid var(--line); }
-    .timeline div {
-      display: grid;
-      grid-template-columns: 105px 1fr;
-      gap: 22px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .timeline span { color: var(--rust); font: 10px ui-monospace, monospace; text-transform: uppercase; }
-    .timeline p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
-    .timeline strong { color: var(--ink); }
-
-    .contact {
-      padding: clamp(82px, 9vw, 130px) max(32px, calc((100vw - 1180px) / 2));
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: clamp(60px, 9vw, 140px);
-      align-items: end;
-      background: var(--teal-dark);
-      color: white;
-    }
-    .contact .kicker { color: #9bd0c9; }
-    .contact-links { border-top: 1px solid rgba(255, 255, 255, 0.27); }
-    .contact-links a {
-      display: grid;
-      grid-template-columns: 28px 1fr 20px;
-      gap: 14px;
-      align-items: center;
-      padding: 22px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.27);
-      font-size: 13px;
-      font-weight: 650;
-    }
-    .icon { font-size: 18px; }
-
-    footer {
-      padding: 28px max(32px, calc((100vw - 1180px) / 2));
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 20px;
-      background: var(--ink);
-      color: #9aa49f;
-      font: 9px ui-monospace, monospace;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    footer p { margin: 0; }
-    footer a { justify-self: end; color: white; }
-    a:focus-visible { outline: 2px solid var(--rust); outline-offset: 6px; }
-
-    @media (max-width: 760px) {
-      header { width: min(100% - 36px, 1340px); grid-template-columns: 1fr auto; }
-      nav { display: none; }
-      .hero {
-        width: min(100% - 36px, 1340px);
-        min-height: auto;
-        grid-template-columns: 1fr;
-        gap: 58px;
-        padding: 66px 0 86px;
-      }
-      .hero h1 { font-size: clamp(51px, 14vw, 70px); }
-      .hero h1 br { display: none; }
-      .portrait { width: min(88%, 440px); margin: auto; }
-      .signal { right: -12px; width: 190px; }
-      .section { width: min(100% - 36px, 1180px); }
-      .statement, .pubs, .contact { padding-left: 24px; padding-right: 24px; }
-      .research { margin-top: 52px; }
-      .research article { grid-template-columns: 48px 1fr; }
-      .research article > div { grid-template-columns: 1fr; gap: 14px; }
-      .pub-head, .contact { display: grid; grid-template-columns: 1fr; align-items: start; }
-      .publication { grid-template-columns: 1fr 36px; gap: 24px; }
-      .meta { grid-column: 1 / -1; flex-direction: row; }
-      .pub-arrow { grid-column: 2; grid-row: 2; width: 36px; height: 36px; }
-      .about { grid-template-columns: 1fr; gap: 58px; }
-      footer { grid-template-columns: 1fr auto; }
-      footer p:nth-child(2) { display: none; }
-    }
-    @media (max-width: 420px) {
-      .hero-links { align-items: flex-start; flex-direction: column; gap: 24px; }
-      .research article { grid-template-columns: 1fr; }
-      .timeline div { grid-template-columns: 82px 1fr; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
-    }
+    :root{--ink:#181818;--muted:#5e6468;--blue:#00669b;--blue-dark:#004d77;--rule:#d8dde0;--soft:#f5f8f9}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:78px}
+    body{margin:0;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.48}
+    a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}a:hover{color:var(--blue-dark)}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip-link{position:fixed;top:-60px;left:20px;z-index:100;padding:10px 14px;background:var(--ink);color:#fff}.skip-link:focus{top:0}
+    header,.page-shell,footer{width:min(calc(100% - 40px),1040px);margin-left:auto;margin-right:auto}
+    header{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--blue)}
+    .site-name{color:var(--ink);font-size:18px;font-weight:700;text-decoration:none}
+    nav{display:flex;gap:26px;font-size:14px}nav a{color:var(--ink);text-decoration:none}nav a:hover{color:var(--blue)}
+    .profile{display:grid;grid-template-columns:178px 1fr;gap:28px;padding:30px 0 24px}
+    .profile-photo{width:178px;height:178px;margin-top:4px;border-radius:50%;object-fit:cover;object-position:50% 35%;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+    .profile-copy p{margin:0 0 17px}.profile-links{display:flex;flex-wrap:wrap;gap:6px;color:var(--muted);font-size:14px}.profile-links a{font-weight:700}
+    section.content{padding:22px 0 27px;border-top:1px solid var(--rule)}h2{margin:0 0 13px;font-size:21px;line-height:1.25}
+    .news{margin:0;padding:0;list-style:none}.news li{display:grid;grid-template-columns:82px 1fr;gap:10px;margin:4px 0}.news time{color:#72777a;font-weight:700}
+    .research{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.research article{padding:16px 17px;border-left:3px solid var(--blue);background:var(--soft)}
+    .research h3{margin:0 0 7px;font-size:16px}.research p{margin:0;color:var(--muted);font-size:14px}
+    .section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px}.section-heading>a{font-size:14px}
+    .publications{margin:0;padding:0;list-style:none}.publications li{display:grid;grid-template-columns:58px 1fr;gap:14px;padding:15px 0;border-top:1px solid #e6e9ea}.publications li:first-child{border-top:0}
+    .year{color:#747a7e;font-weight:700}.title{font-weight:700}.publications p{margin:3px 0 0;color:var(--muted);font-size:14px}.venue{color:var(--blue-dark)!important;font-style:italic}
+    footer{margin-top:10px;padding:22px 0 30px;display:flex;justify-content:space-between;border-top:3px solid var(--blue);color:var(--muted);font-size:13px}
+    @media(max-width:720px){header{height:auto;padding:17px 0 13px;align-items:flex-start;gap:14px}nav{gap:12px;flex-wrap:wrap;justify-content:flex-end}.profile{grid-template-columns:1fr}.profile-photo{width:142px;height:142px}.research{grid-template-columns:1fr;gap:12px}}
+    @media(max-width:480px){body{font-size:15px}header{display:block}nav{margin-top:9px;justify-content:flex-start}.news li,.publications li{grid-template-columns:1fr;gap:2px}.section-heading{display:block}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header id="top">
-    <a class="mark" href="#top" aria-label="Muhammad Zubair, home">M<span>Z</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#about">About</a>
-    </nav>
-    <a class="scholar" href="https://scholar.google.com/citations?user=opslYrgAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Scholar ↗</a>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header>
+    <a class="site-name" href="#top">Muhammad Zubair</a>
+    <nav aria-label="Main navigation"><a href="#news">News</a><a href="#research">Research</a><a href="#publications">Publications</a></nav>
   </header>
-
-  <main id="main">
-    <section class="hero">
-      <div>
-        <p class="eyebrow">Biomedical engineer · neural interfaces</p>
-        <h1>Engineering interfaces<br>that listen to the <em>body.</em></h1>
-        <p class="summary">I develop wearable bioelectronic systems and intelligent algorithms that transform physiological signals into meaningful human–machine interaction.</p>
-        <div class="hero-links">
-          <a class="primary" href="#publications">Explore my work <span class="circle">↗</span></a>
-          <a class="text-link under" href="https://www.linkedin.com/in/muhammad-zubair-b5419a105" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        </div>
-      </div>
-      <div class="portrait">
-        <div class="photo"><img src="https://yuresearch.github.io/images/IMG_0612.jpeg" alt="Muhammad Zubair"></div>
-        <div class="signal" aria-hidden="true"><b>EEG</b><div class="wave">⌁╱╲╱⌁</div><small>neural signal / 500 Hz</small></div>
-        <p class="caption">PhD Candidate<br>Penn State Biomedical Engineering</p>
+  <main id="content" class="page-shell">
+    <h1 class="visually-hidden">Muhammad Zubair — Research Website</h1>
+    <section class="profile" id="top">
+      <img class="profile-photo" src="https://yuresearch.github.io/images/IMG_0612.jpeg" alt="Muhammad Zubair">
+      <div class="profile-copy">
+        <p><strong>Muhammad Zubair</strong> is a PhD candidate in the Department of Biomedical Engineering at <a href="https://www.psu.edu/" target="_blank" rel="noreferrer">The Pennsylvania State University</a>. In January 2027, he will join <a href="https://www.utexas.edu/" target="_blank" rel="noreferrer">The University of Texas at Austin</a> as a Postdoctoral Fellow in Computer Science.</p>
+        <p>His research lies at the intersection of <strong>wearable bioelectronics, neural interfaces, biomedical signal processing, and artificial intelligence</strong>. He develops conformal physiological sensors and computational methods for translating EEG, EOG, EMG, and ECG signals into reliable information for human–machine interfaces and health monitoring.</p>
+        <p>His work spans epidermal sensing, sleep and drowsiness monitoring, physiological signal decoding, and intelligent assistive systems, with publications in venues including <em>Science Advances</em>, <em>National Science Review</em>, and IEEE journals.</p>
+        <p class="profile-links"><a href="https://scholar.google.com/citations?user=opslYrgAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a><span>·</span><a href="https://www.linkedin.com/in/muhammad-zubair-b5419a105" target="_blank" rel="noreferrer">LinkedIn</a><span>·</span><span>PhD Candidate, Penn State BME</span></p>
       </div>
     </section>
-
-    <section class="statement">
-      <p>My work sits where <strong>soft bioelectronics</strong>, <strong>biomedical signal processing</strong> and <strong>artificial intelligence</strong> meet—building sensing systems that feel less like devices and more like a natural extension of the person wearing them.</p>
+    <section class="content" id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><time>2026.07</time><span>Launched my research website.</span></li>
+        <li><time>2026.07</time><span>Accepted a Postdoctoral Fellow position in Computer Science at UT Austin, beginning January 2027.</span></li>
+        <li><time>2025.01</time><span>Our work on bioprinted optoelectronically active cardiac tissues was published in <em>Science Advances</em>.</span></li>
+        <li><time>2024</time><span>Published work spanning wearable sensing and AI-enabled physiological signal analysis.</span></li>
+      </ul>
     </section>
-
-    <section class="section" id="research">
-      <p class="kicker">Research</p>
-      <h2>From the skin to intelligent systems.</h2>
+    <section class="content" id="research">
+      <h2>Research</h2>
       <div class="research">
-        <article><span class="num">01</span><div><h3>Epidermal bioelectronics</h3><p>Soft, conformal and drawn-on-skin electrodes for high-fidelity physiological sensing in everyday environments.</p></div></article>
-        <article><span class="num">02</span><div><h3>Neural &amp; physiological decoding</h3><p>Signal processing and machine learning for EEG, EOG, EMG and ECG—turning noisy biosignals into reliable insight.</p></div></article>
-        <article><span class="num">03</span><div><h3>Human–machine interfaces</h3><p>Closed-loop systems that translate human intent and state into responsive assistive and interactive technologies.</p></div></article>
+        <article><h3>Wearable and epidermal bioelectronics</h3><p>Conformal and drawn-on-skin electrodes for unobtrusive, high-quality electrophysiology in real-world environments.</p></article>
+        <article><h3>Neural and physiological signal analysis</h3><p>Signal processing and machine learning for EEG, EOG, EMG, and ECG, including sleep, drowsiness, and neurological applications.</p></article>
+        <article><h3>Human–machine interfaces</h3><p>Intelligent systems that translate physiological signals and human intent into responsive assistive technologies.</p></article>
       </div>
     </section>
-
-    <section class="section pubs" id="publications">
-      <div class="pub-head">
-        <div><p class="kicker">Selected publications</p><h2>Research across sensing, signals and intelligence.</h2></div>
-        <a class="text-link under" href="https://scholar.google.com/citations?user=opslYrgAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Full publication list ↗</a>
-      </div>
-      <div class="pub-list">
-        <a class="publication" href="https://www.science.org/doi/10.1126/sciadv.adt7210" target="_blank" rel="noreferrer"><div class="meta"><span>2025</span><span>Bioelectronics</span></div><div><h3>Bioprinted optoelectronically active cardiac tissues</h3><p>F. Ershad, Z. Rao, …, M. Zubair, et al.</p><p class="venue">Science Advances · 11(4), eadt7210</p></div><span class="pub-arrow">↗</span></a>
-        <a class="publication" href="https://doi.org/10.1093/nsr/nwae050" target="_blank" rel="noreferrer"><div class="meta"><span>2024</span><span>Wearable sensing</span></div><div><h3>Displacement-pressure biparametrically regulated softness sensory system for intraocular pressure monitoring</h3><p>Y. Cheng, Y. Zhan, …, M. Zubair, C. Yu, and C. Guo</p><p class="venue">National Science Review · nwae050</p></div><span class="pub-arrow">↗</span></a>
-        <a class="publication" href="https://ieeexplore.ieee.org/document/10308525" target="_blank" rel="noreferrer"><div class="meta"><span>2024</span><span>Physiological AI</span></div><div><h3>Detection of Sleep Apnea From ECG Signals Using Sliding Singular Spectrum Based Subpattern Principal Component Analysis</h3><p>M. Zubair, U. K. Naik M, R. K. Tripathy, et al.</p><p class="venue">IEEE Transactions on Artificial Intelligence · 5</p></div><span class="pub-arrow">↗</span></a>
-        <a class="publication" href="https://doi.org/10.1109/JSEN.2021.3077578" target="_blank" rel="noreferrer"><div class="meta"><span>2021</span><span>Neural decoding</span></div><div><h3>Detection of Epileptic Seizures From EEG Signals by Combining Dimensionality Reduction Algorithms With Machine Learning Models</h3><p>M. Zubair, M. V. Belykh, U. K. Naik M, et al.</p><p class="venue">IEEE Sensors Journal · 21(15)</p></div><span class="pub-arrow">↗</span></a>
-        <a class="publication" href="https://ieeexplore.ieee.org/document/9576702" target="_blank" rel="noreferrer"><div class="meta"><span>2021</span><span>EEG analytics</span></div><div><h3>Classification of Alcoholic and Non-Alcoholic EEG Signals Based on Sliding-SSA and Independent Component Analysis</h3><p>S. Agarwal and M. Zubair</p><p class="venue">IEEE Sensors Journal · 21(23)</p></div><span class="pub-arrow">↗</span></a>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <div><p class="kicker">About</p><h2>Developing the next generation of wearable and symbiotic interfaces.</h2></div>
-      <div class="about-copy">
-        <p>I am a PhD candidate in Biomedical Engineering at The Pennsylvania State University, where I study wearable electrophysiology, neural interfaces and AI-enabled physiological sensing.</p>
-        <p>In January 2027, I will join The University of Texas at Austin as a Postdoctoral Fellow in Computer Science, working on closed-loop physiological interfaces and interventions with the Symbiotic Interfaces Lab.</p>
-        <div class="timeline">
-          <div><span>2027 →</span><p><strong>Postdoctoral Fellow</strong><br>UT Austin · Computer Science</p></div>
-          <div><span>Present</span><p><strong>PhD Candidate</strong><br>Penn State · Biomedical Engineering</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact">
-      <div><p class="kicker">Connect</p><h2>Interested in research at the intersection of people and technology?</h2></div>
-      <div class="contact-links">
-        <a href="https://scholar.google.com/citations?user=opslYrgAAAAJ&amp;hl=en" target="_blank" rel="noreferrer"><span class="icon">♢</span><span>Google Scholar</span><span>↗</span></a>
-        <a href="https://www.linkedin.com/in/muhammad-zubair-b5419a105" target="_blank" rel="noreferrer"><span class="icon">in</span><span>LinkedIn</span><span>↗</span></a>
-      </div>
+    <section class="content" id="publications">
+      <div class="section-heading"><h2>Selected Publications</h2><a href="https://scholar.google.com/citations?user=opslYrgAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">View all on Google Scholar</a></div>
+      <ol class="publications">
+        <li><span class="year">2025</span><div><a class="title" href="https://www.science.org/doi/10.1126/sciadv.adt7210" target="_blank" rel="noreferrer">Bioprinted optoelectronically active cardiac tissues</a><p>F. Ershad, Z. Rao, …, M. Zubair, et al.</p><p class="venue">Science Advances 11(4), eadt7210</p></div></li>
+        <li><span class="year">2024</span><div><a class="title" href="https://doi.org/10.1093/nsr/nwae050" target="_blank" rel="noreferrer">Displacement-pressure biparametrically regulated softness sensory system for intraocular pressure monitoring</a><p>Y. Cheng, Y. Zhan, …, M. Zubair, C. Yu, and C. Guo</p><p class="venue">National Science Review, nwae050</p></div></li>
+        <li><span class="year">2024</span><div><a class="title" href="https://ieeexplore.ieee.org/document/10308525" target="_blank" rel="noreferrer">Detection of Sleep Apnea From ECG Signals Using Sliding Singular Spectrum Based Subpattern Principal Component Analysis</a><p>M. Zubair, U. K. Naik M, R. K. Tripathy, et al.</p><p class="venue">IEEE Transactions on Artificial Intelligence 5</p></div></li>
+        <li><span class="year">2021</span><div><a class="title" href="https://doi.org/10.1109/JSEN.2021.3077578" target="_blank" rel="noreferrer">Detection of Epileptic Seizures From EEG Signals by Combining Dimensionality Reduction Algorithms With Machine Learning Models</a><p>M. Zubair, M. V. Belykh, U. K. Naik M, et al.</p><p class="venue">IEEE Sensors Journal 21(15)</p></div></li>
+        <li><span class="year">2021</span><div><a class="title" href="https://ieeexplore.ieee.org/document/9576702" target="_blank" rel="noreferrer">Classification of Alcoholic and Non-Alcoholic EEG Signals Based on Sliding-SSA and Independent Component Analysis</a><p>S. Agarwal and M. Zubair</p><p class="venue">IEEE Sensors Journal 21(23)</p></div></li>
+      </ol>
     </section>
   </main>
-
-  <footer>
-    <p>© 2026 Muhammad Zubair</p>
-    <p>Biomedical engineering · intelligent interfaces</p>
-    <a href="#top">Back to top ↑</a>
-  </footer>
+  <footer><span>© 2026 Muhammad Zubair</span><a href="#top">Back to top</a></footer>
 </body>
 </html>
