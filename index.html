@@ -20,6 +20,29 @@
     .profile{display:grid;grid-template-columns:178px 1fr;gap:28px;padding:30px 0 24px}
     .profile-photo{width:178px;height:178px;margin-top:4px;border-radius:50%;object-fit:cover;object-position:50% 35%;box-shadow:0 2px 8px rgba(0,0,0,.18)}
     .profile-copy p{margin:0 0 17px}.profile-links{display:flex;flex-wrap:wrap;gap:6px;color:var(--muted);font-size:14px}.profile-links a{font-weight:700}
+    .research-slideshow {
+      position: relative;
+      display: grid;
+      width: 100%;
+      margin-top: 24px;
+      overflow: hidden;
+      background: white;
+    }
+    
+    .research-slide {
+      grid-area: 1 / 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    }
+    
+    .research-slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
     .profile-details {
       margin-top: 4px;
     }
@@ -137,9 +160,24 @@
         <article><h3>Neural and physiological signal analysis</h3><p>Signal processing and machine learning for EEG, EOG, EMG, and ECG, including sleep, drowsiness, and neurological applications.</p></article>
         <article><h3>Human-machine interfaces</h3><p>Intelligent systems that translate physiological signals and human intent into responsive assistive technologies.</p></article>
       </div>
-    <div class="research-overview">
-      <img src="Research overview.png" alt="Overview of Muhammad Zubair's research">
-    </div>
+      <div class="research-slideshow" aria-label="Research overview slideshow">
+      
+        <img
+          class="research-slide active"
+          src="Research%20overview.png"
+          alt="Overview of Muhammad Zubair's research">
+      
+        <img
+          class="research-slide"
+          src="DoS%20Prosthetic%20Hand%20Overview.png"
+          alt="Drawn-on-skin bioelectronics for prosthetic hand control">
+      
+        <img
+          class="research-slide"
+          src="Neural%20Interface%20Overview.png"
+          alt="Neural interface research overview">
+      
+      </div>
     </section>
     <section class="content" id="publications">
       <div class="section-heading"><h2>Selected Publications</h2><a href="https://scholar.google.com/citations?user=opslYrgAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">View all on Google Scholar</a></div>
@@ -153,6 +191,25 @@
     </section>
   </main>
   <footer><span>© 2026 Muhammad Zubair</span><a href="#top">Back to top</a></footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".research-slide");
+  
+      if (slides.length < 2) return;
+  
+      let currentSlide = 0;
+  
+      setInterval(function () {
+        slides[currentSlide].classList.remove("active");
+  
+        currentSlide = (currentSlide + 1) % slides.length;
+  
+        slides[currentSlide].classList.add("active");
+      }, 5000);
+    });
+  </script>
+  
   <!-- Cloudflare Web Analytics -->
   <script
     type="module"
