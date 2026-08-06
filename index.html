@@ -22,11 +22,28 @@
     .profile-copy p{margin:0 0 17px}.profile-links{display:flex;flex-wrap:wrap;gap:6px;color:var(--muted);font-size:14px}.profile-links a{font-weight:700}
     .research-slideshow {
       position: relative;
-      display: grid;
       width: 100%;
       margin-top: 24px;
       overflow: hidden;
       background: white;
+      transition: height 0.6s ease-in-out;
+    }
+    
+    .research-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    }
+    
+    .research-slide.active {
+      opacity: 1;
+      visibility: visible;
     }
     
     .research-slide {
@@ -194,19 +211,41 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      const slideshow = document.querySelector(".research-slideshow");
       const slides = document.querySelectorAll(".research-slide");
   
-      if (slides.length < 2) return;
+      if (!slideshow || slides.length === 0) return;
   
       let currentSlide = 0;
   
-      setInterval(function () {
-        slides[currentSlide].classList.remove("active");
+      function adjustSlideshowHeight() {
+        const activeImage = slides[currentSlide];
+        const imageHeight = activeImage.getBoundingClientRect().height;
   
-        currentSlide = (currentSlide + 1) % slides.length;
+        if (imageHeight > 0) {
+          slideshow.style.height = imageHeight + "px";
+        }
+      }
   
-        slides[currentSlide].classList.add("active");
-      }, 5000);
+      slides.forEach(function (slide) {
+        slide.addEventListener("load", adjustSlideshowHeight);
+      });
+  
+      window.addEventListener("resize", adjustSlideshowHeight);
+  
+      requestAnimationFrame(adjustSlideshowHeight);
+  
+      if (slides.length > 1) {
+        setInterval(function () {
+          slides[currentSlide].classList.remove("active");
+  
+          currentSlide = (currentSlide + 1) % slides.length;
+  
+          slides[currentSlide].classList.add("active");
+  
+          requestAnimationFrame(adjustSlideshowHeight);
+        }, 5000);
+      }
     });
   </script>
   
